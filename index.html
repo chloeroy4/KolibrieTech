@@ -4,36 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KolibrieTech</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="font-bubbleFont">
+  
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  
+  <!-- Link to the custom styles -->
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Fredoka One', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
+    /* Menu Styling */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #EF8C9F;
+      padding: 10px 20px;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #DA4059;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #F05746;
+    }
+
+    /* Hero Section (Main Text) */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('Untitled design.png');
+      background-size: cover;
+      text-align: center;
+      color: #DA4059;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      text-transform: uppercase;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
     <div class="logo">
-      <img src="Untitled design.png" alt="KolibrieTech Logo">
+      <img src="image.1" alt="Logo"> <!-- Replace with the actual logo image file -->
+      <span>KolibrieTech</span>
     </div>
     <div class="menu">
-      <a href="/" class="menu-item">HOME</a>
-      <a href="/#about" class="menu-item">ABOUT</a>
-      <a href="/#products" class="menu-item">PRODUCT</a>
-      <a href="/#team" class="menu-item">TEAM</a>
-      <a href="/#testimonials" class="menu-item">THEY SAY ABOUT US</a>
-      <a href="/#contact" class="menu-item">CONTACT</a>
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#product">PRODUCT</a>
+      <a href="#team">TEAM</a>
+      <a href="#about-us">THEY SAY ABOUT US</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </nav>
 
-  <!-- Homepage Section -->
-  <section id="home" class="home-section">
-    <h1 class="main-title">THE BEST REPAIRABLE PC AND LAPTOPS</h1>
-    <h2 class="sub-title">KOLIBRIETECH</h2>
-  </section>
-
-  <!-- About Section (for future sections) -->
-  <section id="about" class="about-section">
-    <h3>About Us</h3>
-    <p>Learn more about KolibrieTech's mission and values.</p>
-  </section>
-
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>THE BEST REPAIRABLE PC AND LAPTOPS</h1>
+    <h2>KOLIBRIETECH</h2>
+  </div>
 </body>
 </html>
