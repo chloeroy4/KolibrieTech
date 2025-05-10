@@ -1,7 +1,7 @@
 /* Import Custom Font */
 @font-face {
   font-family: 'BubbleFont';
-  src: url('assets/fonts/BubbleFont-Regular.ttf') format('truetype');
+  src: url('BubbleFont-Regular.ttf') format('truetype');
 }
 
 body {
