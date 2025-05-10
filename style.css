@@ -1,75 +1,76 @@
-/* Import Custom Font */
-@font-face {
-  font-family: 'BubbleFont';
-  src: url('BubbleFont-Regular.ttf') format('truetype');
-}
-
+/* Body and font */
 body {
+  font-family: 'BubbleFont', sans-serif; /* Ensure you have the right font applied */
   margin: 0;
-  font-family: 'BubbleFont', sans-serif;
-  scroll-behavior: smooth;
+  padding: 0;
+  background-color: #f7f7f7;
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
   background-color: #EF8C9F;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 30px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  padding: 16px;
 }
 
-.logo-container {
+.logo img {
+  height: 40px; /* Adjust the size of the logo */
+}
+
+.menu {
   display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.brand-name {
-  color: #DA4059;
-  font-size: 24px;
-  text-decoration: none;
-}
-
-.nav-links a {
-  color: #DA4059;
-  text-decoration: none;
   margin-left: 20px;
-  font-size: 16px;
-  transition: opacity 0.3s ease;
+  gap: 30px;
+  font-size: 18px;
 }
 
-.nav-links a:hover {
-  opacity: 0.7;
+.menu-item {
+  color: #DA4059;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Home Section */
+.menu-item:hover {
+  color: #B3244D; /* Darker shade on hover */
+}
+
+/* Homepage Section */
 .home-section {
-  height: 100vh;
-  background: url('assets/images/home-bg.jpg') center center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url('Untitled design.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
   text-align: center;
-  padding-top: 60px; /* space for fixed nav */
+  padding: 100px 20px;
 }
 
-.home-text h1 {
-  font-size: 36px;
-  color: white;
-  margin: 0;
+.main-title {
+  font-size: 50px;
+  font-weight: bold;
 }
 
-.home-text h2 {
-  font-size: 24px;
-  color: white;
+.sub-title {
+  font-size: 30px;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+/* About Section */
+.about-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.about-section h3 {
+  font-size: 30px;
+  color: #DA4059;
+}
+
+.about-section p {
+  font-size: 18px;
   margin-top: 10px;
 }
