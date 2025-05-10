@@ -1,76 +1,64 @@
-/* Body and font */
+/* Global styles */
 body {
-  font-family: 'BubbleFont', sans-serif; /* Ensure you have the right font applied */
+  font-family: 'Fredoka One', sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
 }
 
-/* Navbar */
-.navbar {
+/* Menu Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #EF8C9F;
+  padding: 10px 20px;
+}
+
+nav .logo {
   display: flex;
   align-items: center;
-  padding: 16px;
 }
 
-.logo img {
-  height: 40px; /* Adjust the size of the logo */
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
 }
 
-.menu {
-  display: flex;
-  margin-left: 20px;
-  gap: 30px;
-  font-size: 18px;
-}
-
-.menu-item {
+nav a {
   color: #DA4059;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-size: 18px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
 }
 
-.menu-item:hover {
-  color: #B3244D; /* Darker shade on hover */
+nav a:hover {
+  color: #F05746;
 }
 
-/* Homepage Section */
-.home-section {
-  background-image: url('Untitled design.png');
+/* Hero Section (Main Text) */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('Untitled design.png'); /* Your image file */
   background-size: cover;
-  background-position: center;
-  color: white;
   text-align: center;
-  padding: 100px 20px;
-}
-
-.main-title {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.sub-title {
-  font-size: 30px;
-  font-weight: lighter;
-  margin-top: 10px;
-}
-
-/* About Section */
-.about-section {
-  padding: 40px;
-  text-align: center;
-  background-color: #ffffff;
-  color: #333333;
-}
-
-.about-section h3 {
-  font-size: 30px;
   color: #DA4059;
 }
 
-.about-section p {
-  font-size: 18px;
-  margin-top: 10px;
+.hero h1 {
+  font-size: 72px;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
 }
