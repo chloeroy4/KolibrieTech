@@ -2,167 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eco Repair - Ecological Repairable Computer</title>
-  <meta name="description" content="Ecological repairable computers that are ethically sourced and environmentally friendly." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; scroll-behavior: smooth; }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
-
-    nav a {
-      margin-left: 1rem;
-      color: white;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      height: 100vh;
-      background: url('/image1.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: -1;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .about-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .about-box {
-      flex: 1;
-      padding: 2rem;
-      color: white;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      min-height: 300px;
-    }
-
-    .about-box h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-box a {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border: 1px solid black;
-      background: rgba(255,255,255,0.8);
-      color: black;
-      text-decoration: none;
-    }
-
-    .product, .testimonials, .contact {
-      background: #f5f5f5;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      color: #fff;
-    }
-
-    @media(min-width: 768px) {
-      .about-container {
-        flex-direction: row;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolibrietech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">Kolibrietech</div>
+      <nav class="main-nav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#product">PRODUCT</a>
+        <a href="#team">TEAM</a>
+        <a href="#testimonials">THEY SAY ABOUT US</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <div><strong>ECO REPAIR</strong></div>
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#product">PRODUCT</a>
-    <a href="#team">TEAM</a>
-    <a href="#testimonials">THEY SAY</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-</header>
-
-<section id="home" class="hero">
-  <h1>WHATEVER PRODUCT WE HAVE</h1>
-  <p>WHATEVER SUBTITLE</p>
-</section>
-
-<section id="about" class="section about-container">
-  <div class="about-box" style="background-image: url('/image2.jpg'); background-color: rgba(52, 199, 89, 0.7);">
-    <h2>OUR VISION</h2>
-    <p>WHATEVER VISION</p>
-  </div>
-  <div class="about-box" style="background-image: url('/image3.jpg'); background-color: rgba(0, 150, 136, 0.7);">
-    <h2>OUR MISSION</h2>
-    <p>WHATEVER MISSION</p>
-  </div>
-  <div class="about-box" style="background-image: url('/image4.jpg'); background-color: rgba(3, 169, 244, 0.7);">
-    <h2>COMPANY'S GOALS</h2>
-    <p>WHY OUR GOALS ARE IMPORTANT</p>
-    <a href="#product">VIEW MORE</a>
-  </div>
-</section>
-
-<section id="product" class="section product">
-  <h2>OUR PRODUCT</h2>
-  <p>Product section content will be added here.</p>
-</section>
-
-<section id="team" class="section">
-  <h2>OUR TEAM</h2>
-  <p>Team section content will be added here.</p>
-</section>
-
-<section id="testimonials" class="section testimonials">
-  <h2>THEY SAY ABOUT US</h2>
-  <p>Testimonials section content will be added here.</p>
-</section>
-
-<section id="contact" class="section contact">
-  <h2>CONTACTS – WORK WITH US</h2>
-  <p>Contact section content will be added here.</p>
-</section>
-
-<footer class="footer">
-  &copy; 2025 Eco Repair. All rights reserved.
-</footer>
-
+  <section id="home" class="hero-section">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>WHATEVER PRODUCT WE HAVE</h1>
+      <p>WHATEVER SUBTITLE</p>
+    </div>
+  </section>
 </body>
 </html>
