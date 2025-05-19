@@ -51,36 +51,66 @@ header {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background-image: url('image1.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  background-color: #FC7EA4;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
+  color: #F05746;
+  padding: 100px 20px 40px;
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 64px;
   margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 20px;
+  font-size: 24px;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.about-card {
+  flex: 1;
+  min-width: 280px;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-card h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.about-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.view-more {
+  border: none;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Product Section Placeholder */
+.product-section {
+  height: 500px;
+  background-color: #f4f4f4;
+  padding: 80px 20px;
 }
