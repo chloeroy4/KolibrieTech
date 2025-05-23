@@ -22,121 +22,126 @@
     </div>
   </header>
 
-  
-<section class="bg-[#e3edfc] text-[#0f4a7c] py-12 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold mb-4">Supply Chain Transparency</h2>
-    <p class="mb-8 text-lg">We are committed to ethical sourcing, regional assembly, and low-emission shipping. Here’s how each laptop component travels before it reaches you.</p>
-    
-    <!-- MAP -->
-    <div class="mb-10 aspect-video w-full rounded-lg overflow-hidden shadow-md">
+  <style>
+  .supply-chain-section {
+    background-color: #e3edfc;
+    color: #0f4a7c;
+    padding: 60px 20px;
+    font-family: 'Lora', serif;
+  }
+
+  .supply-chain-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .supply-chain-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .supply-chain-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+  }
+
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .supply-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .supply-table th,
+  .supply-table td {
+    border: 1px solid #ccc;
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .supply-table th {
+    background-color: #0f4a7c;
+    color: white;
+  }
+
+  .supply-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  @media (max-width: 768px) {
+    .supply-chain-section h2 {
+      font-size: 2rem;
+    }
+    .supply-table th,
+    .supply-table td {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+</style>
+
+<section class="supply-chain-section">
+  <div class="supply-chain-container">
+    <h2>Supply Chain Transparency</h2>
+    <p>We are committed to ethical sourcing, regional assembly, and low-emission shipping. Here’s how each laptop component travels before it reaches you.</p>
+
+    <div class="map-container">
       <iframe
-        class="w-full h-full"
-        frameborder="0"
-        style="border:0"
-        loading="lazy"
-        allowfullscreen
-        src="https://www.google.com/maps/d/u/0/embed?mid=1XyV8zYScfPfKygfnHj_pSEu28MZgOwQ&ehbc=2E312F">
+        src="https://www.google.com/maps/d/u/0/embed?mid=1XyV8zYScfPfKygfnHj_pSEu28MZgOwQ&ehbc=2E312F"
+        allowfullscreen=""
+        loading="lazy">
       </iframe>
     </div>
 
-    <!-- TABLE -->
-    <div class="overflow-x-auto shadow-md rounded-lg">
-      <table class="min-w-full bg-white border border-gray-200 text-sm">
-        <thead class="bg-[#0f4a7c] text-white text-left">
-          <tr>
-            <th class="py-3 px-4 border">Component</th>
-            <th class="py-3 px-4 border">Buy Ready or Assemble</th>
-            <th class="py-3 px-4 border">Raw Materials Source</th>
-            <th class="py-3 px-4 border">Assembly Hub(s)</th>
-          </tr>
-        </thead>
-        <tbody class="text-[#0f4a7c]">
-          <tr>
-            <td class="py-2 px-4 border">CPU</td>
-            <td class="py-2 px-4 border">Buy Ready</td>
-            <td class="py-2 px-4 border">Taiwan (TSMC), Japan (Renesas), USA (Intel/AMD)</td>
-            <td class="py-2 px-4 border">Mexico, Turkey, Lithuania, Japan</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">GPU</td>
-            <td class="py-2 px-4 border">Buy Ready</td>
-            <td class="py-2 px-4 border">Taiwan (NVIDIA, AMD), USA</td>
-            <td class="py-2 px-4 border">Mexico, Turkey, Lithuania, Japan</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Motherboard</td>
-            <td class="py-2 px-4 border">Buy Ready</td>
-            <td class="py-2 px-4 border">South Korea, Japan, Taiwan, China</td>
-            <td class="py-2 px-4 border">Mexico, Turkey, Lithuania, Japan</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">RAM</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">South Korea, Japan, Taiwan</td>
-            <td class="py-2 px-4 border">Japan (then shipped to others)</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">SSD</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">South Korea, Japan, Taiwan</td>
-            <td class="py-2 px-4 border">Japan (then shipped to others)</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Battery</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Chile (lithium), Ukraine (graphite)</td>
-            <td class="py-2 px-4 border">Mexico, Lithuania</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Cooling System</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Chile (copper), Turkey (plastics)</td>
-            <td class="py-2 px-4 border">Mexico, Turkey</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Keyboard</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Egypt (plastics), Ukraine (electronics)</td>
-            <td class="py-2 px-4 border">Turkey</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Speakers</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Kazakhstan (metals), Chile (wires)</td>
-            <td class="py-2 px-4 border">Mexico, Lithuania</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Microphone</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Japan, Ukraine</td>
-            <td class="py-2 px-4 border">Japan, Lithuania</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Camera</td>
-            <td class="py-2 px-4 border">Buy Ready</td>
-            <td class="py-2 px-4 border">China, Japan, South Korea</td>
-            <td class="py-2 px-4 border">All hubs</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Casing</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Kazakhstan (aluminum), Egypt (plastics)</td>
-            <td class="py-2 px-4 border">Turkey</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border">Wiring</td>
-            <td class="py-2 px-4 border">Assemble</td>
-            <td class="py-2 px-4 border">Chile (copper)</td>
-            <td class="py-2 px-4 border">Mexico</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table class="supply-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Buy Ready or Assemble</th>
+          <th>Raw Materials Source</th>
+          <th>Assembly Hub(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CPU</td><td>Buy Ready</td><td>Taiwan (TSMC), Japan (Renesas), USA (Intel/AMD)</td><td>Mexico, Turkey, Lithuania, Japan</td></tr>
+        <tr><td>GPU</td><td>Buy Ready</td><td>Taiwan (NVIDIA, AMD), USA</td><td>Mexico, Turkey, Lithuania, Japan</td></tr>
+        <tr><td>Motherboard</td><td>Buy Ready</td><td>South Korea, Japan, Taiwan, China</td><td>Mexico, Turkey, Lithuania, Japan</td></tr>
+        <tr><td>RAM</td><td>Assemble</td><td>South Korea, Japan, Taiwan</td><td>Japan (then shipped to others)</td></tr>
+        <tr><td>SSD</td><td>Assemble</td><td>South Korea, Japan, Taiwan</td><td>Japan (then shipped to others)</td></tr>
+        <tr><td>Battery</td><td>Assemble</td><td>Chile (lithium), Ukraine (graphite)</td><td>Mexico, Lithuania</td></tr>
+        <tr><td>Cooling System</td><td>Assemble</td><td>Chile (copper), Turkey (plastics)</td><td>Mexico, Turkey</td></tr>
+        <tr><td>Keyboard</td><td>Assemble</td><td>Egypt (plastics), Ukraine (electronics)</td><td>Turkey</td></tr>
+        <tr><td>Speakers</td><td>Assemble</td><td>Kazakhstan (metals), Chile (wires)</td><td>Mexico, Lithuania</td></tr>
+        <tr><td>Microphone</td><td>Assemble</td><td>Japan, Ukraine</td><td>Japan, Lithuania</td></tr>
+        <tr><td>Camera</td><td>Buy Ready</td><td>China, Japan, South Korea</td><td>All hubs</td></tr>
+        <tr><td>Casing</td><td>Assemble</td><td>Kazakhstan (aluminum), Egypt (plastics)</td><td>Turkey</td></tr>
+        <tr><td>Wiring</td><td>Assemble</td><td>Chile (copper)</td><td>Mexico</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
-  
 
+  
    <!-- Contact Section -->
 <section
   id="contact"
