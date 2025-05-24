@@ -415,38 +415,47 @@
 <!-- JS to handle selection -->
 <script>
   function handleSelection() {
-    const regionMap = {
-      canada: { pin: "pin-mexico", table: "mexico" },
-      germany: { pin: "pin-lithuania", table: "lithuania" },
-      turkey: { pin: "pin-turkey", table: "turkey" },
-      japan: { pin: "pin-japan", table: "japan" }
+    const hubs = {
+      mexico: ["canada", "usa", "mexico", "chile", "brazil"],
+      lithuania: ["germany", "france", "italy", "netherlands", "poland", "lithuania"],
+      turkey: ["turkey", "kazakhstan", "egypt", "ukraine"],
+      japan: ["japan", "southkorea", "taiwan", "china", "singapore"]
     };
 
-    // Clear pin highlights
+    // Clear previous highlights
     document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
 
-    const selected = document.getElementById("regionSelect").value;
+    const selected = document.getElementById("regionSelect").value.toLowerCase();
 
-    if (regionMap[selected]) {
+    let matchedHub = null;
+
+    // Find which hub the selected country belongs to
+    for (const hub in hubs) {
+      if (hubs[hub].includes(selected)) {
+        matchedHub = hub;
+        break;
+      }
+    }
+
+    if (matchedHub) {
       // Highlight correct pin
-      document.getElementById(regionMap[selected].pin).classList.add("active");
+      document.getElementById("pin-" + matchedHub).classList.add("active");
 
       // Show correct table
-      showTable(regionMap[selected].table);
+      showTable(matchedHub);
     } else {
-      // If none selected, hide all tables
+      // If no match found, hide all tables
       showTable(null);
     }
   }
 
   function showTable(hub) {
-    const hubs = ["mexico", "lithuania", "turkey", "japan"];
-    hubs.forEach(id => {
+    const allHubs = ["mexico", "lithuania", "turkey", "japan"];
+    allHubs.forEach(id => {
       document.getElementById("table-" + id).style.display = (id === hub) ? "block" : "none";
     });
   }
 </script>
-  
   
   
   
