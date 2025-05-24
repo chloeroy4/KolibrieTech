@@ -52,12 +52,40 @@
     <!-- Japan Pin -->
     <div id="pin-japan" class="map-pin" style="top: 25%; left: 82%;"></div>
   </div>
+<style>
+  .supply-table h2 {
+    color: #FF924A;
+    margin-bottom: 16px;
+  }
 
+  .supply-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    color: #FF924A; /* Text color */
+  }
+
+  .supply-table th,
+  .supply-table td {
+    border: 2px solid #FF924A;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .supply-table th {
+    background-color: #FAF3A2;
+    font-weight: bold;
+  }
+
+  .supply-table tr:nth-child(even) {
+    background-color: #fff3e0; /* light orange row striping */
+  }
+</style>
   <!-- TABLE CONTAINER -->
 <div id="tables-container" style="margin-top: 40px;">
 
   <!-- MEXICO TABLE -->
-  <div id="table-mexico" class="supply-table" style="display: none;">
+  <div id="table-mexico" class="supply-table" style="display: block;">
     <h2>North & South America - Hub: Mexico</h2>
     <table>
       <thead>
