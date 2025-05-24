@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <!-- World Map Section -->
+ <!-- World Map Section -->
 <section style="background-color: #FAF3A2; padding: 60px 20px; text-align: center;">
   <h2 style="color: #FF924A; font-size: 2rem; margin-bottom: 20px;">Global Assembly Locations</h2>
   <p style="color: #FF924A; font-size: 1rem; margin-bottom: 30px;">
@@ -30,7 +30,7 @@
   </p>
 
   <!-- Dropdown -->
-  <select id="regionSelect" onchange="highlightPin()" style="padding: 10px; font-size: 1rem;">
+  <select id="regionSelect" onchange="handleSelection()" style="padding: 10px; font-size: 1rem;">
     <option value="">Select your country</option>
     <option value="canada">Canada</option>
     <option value="germany">Germany</option>
@@ -51,6 +51,12 @@
     <div id="pin-turkey" class="map-pin" style="top: 38%; left: 56%;"></div>
     <!-- Japan Pin -->
     <div id="pin-japan" class="map-pin" style="top: 35%; left: 82%;"></div>
+  </div>
+
+  <!-- TABLE CONTAINER -->
+  <div id="tables-container" style="margin-top: 40px;">
+    <!-- INSERT ALL YOUR TABLE DIVS HERE: table-mexico, table-lithuania, table-turkey, table-japan -->
+    <!-- (Use the exact table code you already have. Omitted here for brevity.) -->
   </div>
 </section>
 
@@ -73,28 +79,41 @@
   }
 </style>
 
-<!-- JS to handle pin highlight -->
+<!-- JS to handle selection -->
 <script>
-  function highlightPin() {
-    // Clear previous highlights
-    document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
-
-    const region = document.getElementById('regionSelect').value;
-
-    const regionToPin = {
-      canada: 'pin-mexico',
-      germany: 'pin-lithuania',
-      turkey: 'pin-turkey',
-      japan: 'pin-japan'
+  function handleSelection() {
+    const regionMap = {
+      canada: { pin: "pin-mexico", table: "mexico" },
+      germany: { pin: "pin-lithuania", table: "lithuania" },
+      turkey: { pin: "pin-turkey", table: "turkey" },
+      japan: { pin: "pin-japan", table: "japan" }
     };
 
-    const pinId = regionToPin[region];
-    if (pinId) {
-      document.getElementById(pinId).classList.add('active');
+    // Clear pin highlights
+    document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
+
+    const selected = document.getElementById("regionSelect").value;
+
+    if (regionMap[selected]) {
+      // Highlight correct pin
+      document.getElementById(regionMap[selected].pin).classList.add("active");
+
+      // Show correct table
+      showTable(regionMap[selected].table);
+    } else {
+      // If none selected, hide all tables
+      showTable(null);
     }
   }
-</script>
 
+  function showTable(hub) {
+    const hubs = ["mexico", "lithuania", "turkey", "japan"];
+    hubs.forEach(id => {
+      document.getElementById("table-" + id).style.display = (id === hub) ? "block" : "none";
+    });
+  }
+</script>
+  
   
 <!-- TABLE CONTAINER -->
 <div id="tables-container" style="margin-top: 40px;">
