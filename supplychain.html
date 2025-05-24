@@ -23,7 +23,7 @@
   </header>
 
  <!-- World Map Section -->
-<section style="background-color: #FAF3A2; padding: 60px 20px; text-align: center;">
+<section style="background-color: #FAF3A2; padding: 60px 20px; text-align: center; margin-top: 80px;">
   <h2 style="color: #FF924A; font-size: 2rem; margin-bottom: 20px;">Global Assembly Locations</h2>
   <p style="color: #FF924A; font-size: 1rem; margin-bottom: 30px;">
     Select your country to see where your laptop is assembled.
@@ -54,68 +54,6 @@
   </div>
 
   <!-- TABLE CONTAINER -->
-  <div id="tables-container" style="margin-top: 40px;">
-    <!-- INSERT ALL YOUR TABLE DIVS HERE: table-mexico, table-lithuania, table-turkey, table-japan -->
-    <!-- (Use the exact table code you already have. Omitted here for brevity.) -->
-  </div>
-</section>
-
-<!-- CSS for pins -->
-<style>
-  .map-pin {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: #0f4a7c;
-    border: 3px solid white;
-    border-radius: 50%;
-    box-shadow: 0 0 6px rgba(0,0,0,0.3);
-    transition: transform 0.3s, background-color 0.3s;
-  }
-
-  .map-pin.active {
-    background-color: #FF924A;
-    transform: scale(1.5);
-  }
-</style>
-
-<!-- JS to handle selection -->
-<script>
-  function handleSelection() {
-    const regionMap = {
-      canada: { pin: "pin-mexico", table: "mexico" },
-      germany: { pin: "pin-lithuania", table: "lithuania" },
-      turkey: { pin: "pin-turkey", table: "turkey" },
-      japan: { pin: "pin-japan", table: "japan" }
-    };
-
-    // Clear pin highlights
-    document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
-
-    const selected = document.getElementById("regionSelect").value;
-
-    if (regionMap[selected]) {
-      // Highlight correct pin
-      document.getElementById(regionMap[selected].pin).classList.add("active");
-
-      // Show correct table
-      showTable(regionMap[selected].table);
-    } else {
-      // If none selected, hide all tables
-      showTable(null);
-    }
-  }
-
-  function showTable(hub) {
-    const hubs = ["mexico", "lithuania", "turkey", "japan"];
-    hubs.forEach(id => {
-      document.getElementById("table-" + id).style.display = (id === hub) ? "block" : "none";
-    });
-  }
-</script>
-  
-  
-<!-- TABLE CONTAINER -->
 <div id="tables-container" style="margin-top: 40px;">
 
   <!-- MEXICO TABLE -->
@@ -237,10 +175,11 @@
       </tbody>
     </table>
   </div>
+  
+  </div>
+</section>
 
-</div>
-
-<!-- SCRIPT -->
+  <!-- SCRIPT -->
 <script>
   function showTable(hub) {
     const ids = ["mexico", "lithuania", "turkey", "japan"];
@@ -252,6 +191,62 @@
   // Example: trigger with your map pin clicks
   // You can call showTable('mexico') when Mexico pin is clicked, and so on
 </script>
+
+<!-- CSS for pins -->
+<style>
+  .map-pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #0f4a7c;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  .map-pin.active {
+    background-color: #FF924A;
+    transform: scale(1.5);
+  }
+</style>
+
+<!-- JS to handle selection -->
+<script>
+  function handleSelection() {
+    const regionMap = {
+      canada: { pin: "pin-mexico", table: "mexico" },
+      germany: { pin: "pin-lithuania", table: "lithuania" },
+      turkey: { pin: "pin-turkey", table: "turkey" },
+      japan: { pin: "pin-japan", table: "japan" }
+    };
+
+    // Clear pin highlights
+    document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
+
+    const selected = document.getElementById("regionSelect").value;
+
+    if (regionMap[selected]) {
+      // Highlight correct pin
+      document.getElementById(regionMap[selected].pin).classList.add("active");
+
+      // Show correct table
+      showTable(regionMap[selected].table);
+    } else {
+      // If none selected, hide all tables
+      showTable(null);
+    }
+  }
+
+  function showTable(hub) {
+    const hubs = ["mexico", "lithuania", "turkey", "japan"];
+    hubs.forEach(id => {
+      document.getElementById("table-" + id).style.display = (id === hub) ? "block" : "none";
+    });
+  }
+</script>
+  
+  
   
   
    <!-- Contact Section -->
