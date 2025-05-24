@@ -22,84 +22,80 @@
     </div>
   </header>
 
-  <style>
-  .supply-chain-section {
-    background-color: #e3edfc;
-    color: #0f4a7c;
-    padding: 60px 20px;
-    font-family: 'Lora', serif;
-  }
+  <!-- World Map Section -->
+<section style="background-color: #FAF3A2; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #FF924A; font-size: 2rem; margin-bottom: 20px;">Global Assembly Locations</h2>
+  <p style="color: #FF924A; font-size: 1rem; margin-bottom: 30px;">
+    Select your country to see where your laptop is assembled.
+  </p>
 
-  .supply-chain-container {
-    max-width: 1200px;
-    margin: auto;
-  }
+  <!-- Dropdown -->
+  <select id="regionSelect" onchange="highlightPin()" style="padding: 10px; font-size: 1rem;">
+    <option value="">Select your country</option>
+    <option value="canada">Canada</option>
+    <option value="germany">Germany</option>
+    <option value="turkey">Turkey</option>
+    <option value="japan">Japan</option>
+  </select>
 
-  .supply-chain-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
+  <!-- Map container -->
+  <div style="position: relative; max-width: 900px; margin: 40px auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution_gray_political.svg/1024px-World_map_-_low_resolution_gray_political.svg.png"
+         alt="World Map" style="width: 100%; height: auto; border-radius: 10px;">
 
-  .supply-chain-section p {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-  }
+    <!-- Mexico Pin -->
+    <div id="pin-mexico" class="map-pin" style="top: 45%; left: 25%;"></div>
+    <!-- Lithuania Pin -->
+    <div id="pin-lithuania" class="map-pin" style="top: 32%; left: 53%;"></div>
+    <!-- Turkey Pin -->
+    <div id="pin-turkey" class="map-pin" style="top: 38%; left: 56%;"></div>
+    <!-- Japan Pin -->
+    <div id="pin-japan" class="map-pin" style="top: 35%; left: 82%;"></div>
+  </div>
+</section>
 
-  .map-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
-  }
-
-  .map-container iframe {
+<!-- CSS for pins -->
+<style>
+  .map-pin {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .supply-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  .supply-table th,
-  .supply-table td {
-    border: 1px solid #ccc;
-    padding: 12px 16px;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  .supply-table th {
+    width: 18px;
+    height: 18px;
     background-color: #0f4a7c;
-    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
   }
 
-  .supply-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  @media (max-width: 768px) {
-    .supply-chain-section h2 {
-      font-size: 2rem;
-    }
-    .supply-table th,
-    .supply-table td {
-      font-size: 0.9rem;
-      padding: 10px;
-    }
+  .map-pin.active {
+    background-color: #FF924A;
+    transform: scale(1.5);
   }
 </style>
 
+<!-- JS to handle pin highlight -->
+<script>
+  function highlightPin() {
+    // Clear previous highlights
+    document.querySelectorAll('.map-pin').forEach(pin => pin.classList.remove('active'));
+
+    const region = document.getElementById('regionSelect').value;
+
+    const regionToPin = {
+      canada: 'pin-mexico',
+      germany: 'pin-lithuania',
+      turkey: 'pin-turkey',
+      japan: 'pin-japan'
+    };
+
+    const pinId = regionToPin[region];
+    if (pinId) {
+      document.getElementById(pinId).classList.add('active');
+    }
+  }
+</script>
+
+  
 <section class="supply-chain-section">
   <div class="supply-chain-container">
     <h2>Supply Chain Transparency</h2>
